@@ -1,7 +1,7 @@
 Package: CovCoagBasePrediction
 Type: Package
 Title: Coagulopathy prediction in SARS-Cov-2
-Version: 1.0.0
+Version: 1.1.0
 Author: Henrik John
 Maintainer: Henrik John <l.john@erasmusmc.nl>
 Description: Coagulopathy prediction in SARS-Cov-2 using baseline predictors age and sex.
