@@ -196,7 +196,7 @@
     "VTE_narrow",
     "DTH"
   ],
-  "createdDate": 18844,
+  "createdDate": 18849,
   "createdBy": "Henrik John",
   "cohortDefinitions": [
     {
@@ -10839,24 +10839,88 @@
     }
   ],
   "modelSettings": [{"LassoLogisticRegressionSettings": {"variance": 0.01}}],
-  "covariateSettings": [[{
-    "settings": {
-      "shortTermStartDays": -30,
-      "DemographicsGender": true,
-      "includedCovariateIds": [],
-      "addDescendantsToInclude": false,
-      "mediumTermStartDays": -180,
-      "attr_class": "covariateSettings",
-      "excludedCovariateConceptIds": [],
-      "longTermStartDays": -365,
-      "DemographicsAge": true,
-      "includedCovariateConceptIds": [],
-      "attr_fun": "getDbDefaultCovariateData",
-      "addDescendantsToExclude": false,
-      "temporal": false,
-      "endDays": 0
+  "covariateSettings": [[
+    {
+      "settings": {
+        "shortTermStartDays": -30,
+        "DemographicsGender": true,
+        "includedCovariateIds": [],
+        "addDescendantsToInclude": false,
+        "mediumTermStartDays": -180,
+        "attr_class": "covariateSettings",
+        "excludedCovariateConceptIds": [],
+        "longTermStartDays": -365,
+        "includedCovariateConceptIds": [],
+        "attr_fun": "getDbDefaultCovariateData",
+        "addDescendantsToExclude": false,
+        "temporal": false,
+        "endDays": 0
+      },
+      "fnct": "createCovariateSettings"
     },
-    "fnct": "createCovariateSettings"
-  }]],
+    {
+      "settings": {
+        "covariateName": "Age <20",
+        "covariateId": 14580020,
+        "analysisId": 458,
+        "ageMap": "function(x){result <- rep(0, length(x)); result[x<20] <- 1; return(result)}"
+      },
+      "fnct": "createAgeCovariateSettings"
+    },
+    {
+      "settings": {
+        "covariateName": "Age 20-44",
+        "covariateId": 14582044,
+        "analysisId": 458,
+        "ageMap": "function(x){result <- rep(0, length(x)); result[x>=20 & x<=44] <- 1; return(result)}"
+      },
+      "fnct": "createAgeCovariateSettings"
+    },
+    {
+      "settings": {
+        "covariateName": "Age 45-54",
+        "covariateId": 14584554,
+        "analysisId": 458,
+        "ageMap": "function(x){result <- rep(0, length(x)); result[x>=45 & x<=54] <- 1; return(result)}"
+      },
+      "fnct": "createAgeCovariateSettings"
+    },
+    {
+      "settings": {
+        "covariateName": "Age 55-64",
+        "covariateId": 14585564,
+        "analysisId": 458,
+        "ageMap": "function(x){result <- rep(0, length(x)); result[x>=55 & x<=64] <- 1; return(result)}"
+      },
+      "fnct": "createAgeCovariateSettings"
+    },
+    {
+      "settings": {
+        "covariateName": "Age 65-74",
+        "covariateId": 14586574,
+        "analysisId": 458,
+        "ageMap": "function(x){result <- rep(0, length(x)); result[x>=65 & x<=74] <- 1; return(result)}"
+      },
+      "fnct": "createAgeCovariateSettings"
+    },
+    {
+      "settings": {
+        "covariateName": "Age 75-84",
+        "covariateId": 14587584,
+        "analysisId": 458,
+        "ageMap": "function(x){result <- rep(0, length(x)); result[x>=75 & x<=84] <- 1; return(result)}"
+      },
+      "fnct": "createAgeCovariateSettings"
+    },
+    {
+      "settings": {
+        "covariateName": "Age >84",
+        "covariateId": 14588500,
+        "analysisId": 458,
+        "ageMap": "function(x){result <- rep(0, length(x)); result[x>84] <- 1; return(result)}"
+      },
+      "fnct": "createAgeCovariateSettings"
+    }
+  ]],
   "packageName": "CovCoagBasePrediction"
 }

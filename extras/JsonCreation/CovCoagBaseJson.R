@@ -27,8 +27,42 @@ populationSettings <- list(PatientLevelPrediction::createStudyPopulationSettings
 modelList <- list(list("LassoLogisticRegressionSettings" = list("variance" = 0.01)))
 
 covariateSettings <- list(list(list(fnct = 'createCovariateSettings',
-                                    settings = FeatureExtraction::createCovariateSettings(useDemographicsGender = T,
-                                                                                          useDemographicsAge = T)))
+                                    settings = FeatureExtraction::createCovariateSettings(useDemographicsGender = T)),
+                               list(fnct = 'createAgeCovariateSettings',
+                                    settings = list(covariateName = 'Age <20',
+                                                    ageMap = 'function(x){result <- rep(0, length(x)); result[x<20] <- 1; return(result)}',
+                                                    covariateId = 14580020,
+                                                    analysisId = 458)),
+                               list(fnct = 'createAgeCovariateSettings',
+                                    settings = list(covariateName = 'Age 20-44', 
+                                                    ageMap = 'function(x){result <- rep(0, length(x)); result[x>=20 & x<=44] <- 1; return(result)}',
+                                                    covariateId = 14582044, # x = covariate data vector, filter with dplyr 
+                                                    analysisId = 458)),
+                               list(fnct = 'createAgeCovariateSettings',
+                                    settings = list(covariateName = 'Age 45-54', 
+                                                    ageMap = 'function(x){result <- rep(0, length(x)); result[x>=45 & x<=54] <- 1; return(result)}',
+                                                    covariateId = 14584554,
+                                                    analysisId = 458)),
+                               list(fnct = 'createAgeCovariateSettings',
+                                    settings = list(covariateName = 'Age 55-64', 
+                                                    ageMap = 'function(x){result <- rep(0, length(x)); result[x>=55 & x<=64] <- 1; return(result)}',
+                                                    covariateId = 14585564,
+                                                    analysisId = 458)),
+                               list(fnct = 'createAgeCovariateSettings',
+                                    settings = list(covariateName = 'Age 65-74', 
+                                                    ageMap = 'function(x){result <- rep(0, length(x)); result[x>=65 & x<=74] <- 1; return(result)}',
+                                                    covariateId = 14586574,
+                                                    analysisId = 458)),
+                               list(fnct = 'createAgeCovariateSettings',
+                                    settings = list(covariateName = 'Age 75-84', 
+                                                    ageMap = 'function(x){result <- rep(0, length(x)); result[x>=75 & x<=84] <- 1; return(result)}',
+                                                    covariateId = 14587584,
+                                                    analysisId = 458)),
+                               list(fnct = 'createAgeCovariateSettings',
+                                    settings = list(covariateName = 'Age >84', 
+                                                    ageMap = 'function(x){result <- rep(0, length(x)); result[x>84] <- 1; return(result)}',
+                                                    covariateId = 14588500,
+                                                    analysisId = 458)))
 )
 
 resrictOutcomePops <- NULL
