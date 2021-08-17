@@ -124,8 +124,7 @@ execute <- function(connectionDetails,
                     onlyFetchData = F,
                     sampleSize = NULL,
                     verbosity = "INFO",
-                    cdmVersion = 5,
-                    evalAgePop = NULL) {
+                    cdmVersion = 5) {
   
   if (!file.exists(outputFolder))
     dir.create(outputFolder, recursive = TRUE)
@@ -259,7 +258,6 @@ execute <- function(connectionDetails,
     predictionAnalysisList$outputFolder = outputFolder
     predictionAnalysisList$verbosity = verbosity
     predictionAnalysisList$onlyFetchData = onlyFetchData
-    predictionAnalysisList$evalAgePop = evalAgePop
     
     if(!is.null(predictionAnalysisList$maxSampleSize)){
       warning('sampleSize is now specified in execute() - ignoring json settings')
