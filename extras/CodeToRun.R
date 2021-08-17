@@ -84,7 +84,8 @@ execute(connectionDetails = connectionDetails,
         createShiny = createShiny,
         createJournalDocument = createJournalDocument,
         analysisIdDocument = analysisIdDocument,
-        sampleSize = sampleSize)
+        sampleSize = sampleSize,
+        evalAgePop = list(c(0, 64), c(65, 150)))
 
 # Uncomment and run the next line to see the shiny results:
 # PatientLevelPrediction::viewMultiplePlp(outputFolder)
