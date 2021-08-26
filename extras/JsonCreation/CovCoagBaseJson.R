@@ -37,7 +37,7 @@ resrictModelCovs <- NULL
 executionSettings <- list(minCovariateFraction = 0.000,
                           normalizeData = T,
                           testSplit = "stratified",
-                          testFraction = 0.20,
+                          testFraction = 0.25,
                           splitSeed = 1000,
                           nfold = 3)
 

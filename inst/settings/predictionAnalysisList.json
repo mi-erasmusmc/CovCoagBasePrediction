@@ -186,7 +186,7 @@
     "minCovariateFraction": 0,
     "splitSeed": 1000,
     "testSplit": "stratified",
-    "testFraction": 0.2,
+    "testFraction": 0.25,
     "normalizeData": true
   },
   "targetIds": 22956,
